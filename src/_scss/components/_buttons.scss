@@ -1,8 +1,13 @@
+button {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
 .button {
 	font-family: $text-font-family;
 	font-size: $button-font-size;
 	color: $color-button-primary-text;
-	background-color: $color-button-primary;
+	background-color: transparent;
 	border-radius: $button-border-radius;
 	min-height: $button-height;
 	padding: $button-padding-tb $button-padding-rl;
@@ -24,11 +29,24 @@
 input[type="submit"] {
     width: auto;
 }
-.button:hover {
-    outline: none;
-	text-decoration: none;
-	color: $color-button-primary-text;
-	background-color: lighten($color-button-primary, 10%);
+
+.button {
+  &:hover {
+      outline: none;
+      text-decoration: none;
+      color: lighten($color-button-primary, 10%);
+      background-color: lighten($color-button-primary, 100%);
+  }
+
+  &.primary:hover {
+      color: $color-button-primary-text;
+      background-color: lighten($color-button-primary, 10%);
+  }
+
+  &.secondary:hover {
+      color: $color-button-secondary-text;
+      background-color: lighten($color-button-secondary, 10%);
+  }
 }
 
 // Disabled
@@ -114,6 +132,11 @@ input[type="submit"] {
     &.large {
         font-size: $button-font-size;
     }
+}
+
+// Primary
+.button.primary {
+    	@include button($color-button-primary-text, $color-button-primary);
 }
 
 // Secondary
