@@ -38,7 +38,7 @@ input[type="submit"] {
       outline: none;
       text-decoration: none;
       color: lighten($color-button-primary, 10%);
-      background-color: lighten($color-button-primary, 100%);
+      background-color: transparent;
   }
 
   &.primary:hover {
